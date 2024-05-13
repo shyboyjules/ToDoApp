@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('task.create');
 }); 
 
 Route::get('/task', [TaskController::class, 'index'])->name('task.index');

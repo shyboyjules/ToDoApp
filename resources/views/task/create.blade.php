@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create</title>
-    
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 </head>
 <body>
-    <h1>create page</h1>
+    <h1>CREATE NEW TASK</h1>
     <div>
         @if($errors->any())
         <ul>
@@ -21,24 +21,27 @@
 
         @endif
     </div>
+    
     <form method="post" action="{{Route('task.store')}}" >
         @csrf
         @method('post')
-        <div>
+        <table>
+        <div class='createtask'>
             <label>task</label>
             <input type="text" name="title" placeholder="title" />
         </div>
-        <div>
+        <div class='createtask'>
             <label>description</label>
             <input type="text" name="description" placeholder="description" />
         </div>
-        <div>
+        <div class='createtask'>
             <label>completed</label>
-            <input type="boolean" name="completed" placeholder="completed" />
+            <input type="boolean" name="completed" placeholder="completed / Not Yet" />
         </div>
-        <div>
+        <div class='createtask'>
             <input type="submit" value="submit new task" />
         </div>
+        </table>
     </form>
 </body>
 </html>
